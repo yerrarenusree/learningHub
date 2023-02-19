@@ -1,1 +1,8 @@
-<p>events works!</p>
+<div class="m-4 pt-4">
+  <div class="p-fluid" *ngIf="router.url !== '/home'">
+    <app-dropdown></app-dropdown>
+  </div>
+  <div class="mt-4">
+    <app-event-card></app-event-card>
+  </div>
+</div>
