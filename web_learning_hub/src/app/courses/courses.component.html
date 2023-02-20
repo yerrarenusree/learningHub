@@ -1,1 +1,9 @@
-<p>courses works!</p>
+<div class="mt-5 mx-0">
+    <div class="p-fluid mt-5 mx-4 pt-5" *ngIf="router.url !== '/home'">
+      <app-dropdown></app-dropdown>
+    </div>
+    <div class="mx-4 mt-4">
+      <app-course-card></app-course-card>
+    </div>
+  </div>
+  

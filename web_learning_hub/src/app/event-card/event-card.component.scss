@@ -1,3 +1,50 @@
-.event-styles {
-    background-color: aqua;
+.event-card-continear {
+   cursor: pointer;
+}
+
+.card-alignment {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.alignement {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-time {
+    font-size: 12px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.footer-alignment {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+}
+
+.label {
+    font-weight: 700;
+}
+
+.grid-alignment {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    gap: 0.5rem;
+}
+
+:host ::ng-deep {
+    .p-card .p-card-content {
+        padding: 0;
+    }
+    .p-card .p-card-footer {
+        padding: 0;
+    }
+    .p-card .p-card-body {
+        padding: 0.5rem 1rem;
+    }
 }

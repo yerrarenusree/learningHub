@@ -1,14 +1,67 @@
 <div>
-  <p-card [header]="heading">
-    <p-panel styleClass="mb-4">
+  <div class="alignement">
+  <h1>{{ heading }}</h1>
+  <button *ngIf="this.router.url === '/home'" pButton pRipple class="p-button-text" type="button" (click)="goToEventPage()">View More</button>
+</div>
+  <div class="card-alignment pt-2">
+    <div *ngFor="let card of specificCardDetails">
+      <p-card styleClass="p-2 event-card-continear" header="{{ card.title }}">
+        <p-divider></p-divider>
+          <p class="pb-2">{{ card.description }}</p>
+          <div class="grid-alignment">
+          <p class="label">PresentedBy:</p>
+          <P>{{ card.presentedBy }}</P>
+          <p class="label">Desigination:</p>
+          <p>{{ card.designation }}</p>
+          <p class="label">Enrolled:</p>
+          <p>{{ card.enrolled }}</p>
+        </div>
+        <ng-template pTemplate="footer">
+          <p-divider></p-divider>
+          <div class="footer-alignment">
+            <button
+              pRipple
+              pButton
+              type="button"
+              label="Enroll"
+              class="p-button-text p-0"
+              styleClass="p-0"
+              (click)="enroll(card.id)"
+            ></button>
+            <div class="time-align">
+              <p class="date-time"><i class="pi pi-calendar-times"  style="font-size: 0.75rem"></i> {{ card.date }}</p>
+              <p class="date-time"><i class="pi pi-clock"  style="font-size: 0.75rem"></i> {{ card.time }}</p>
+            </div>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+    <p-confirmDialog
+      header="Confirmation"
+      icon="pi pi-exclamation-triangle"
+    ></p-confirmDialog>
+    <p-toast></p-toast>
+    <!-- <div class="card-alignment">
+    <p-panel styleClass="pl-4">
       <ng-template pTemplate="header"> Header content here </ng-template>
       Body Content
       <ng-template pTemplate="footer"> Footer content here </ng-template>
     </p-panel>
-    <p-panel>
+    <p-panel styleClass="pl-4">
         <ng-template pTemplate="header"> Header content here </ng-template>
         Body Content
         <ng-template pTemplate="footer"> Footer content here </ng-template>
       </p-panel>
-  </p-card>
+      <p-panel styleClass="pl-4">
+        <ng-template pTemplate="header"> Header content here </ng-template>
+        Body Content
+        <ng-template pTemplate="footer"> Footer content here </ng-template>
+      </p-panel>
+      <p-panel styleClass="pl-4">
+        <ng-template pTemplate="header"> Header content here </ng-template>
+        Body Content
+        <ng-template pTemplate="footer"> Footer content here </ng-template>
+      </p-panel>
+      </div> -->
+  </div>
 </div>

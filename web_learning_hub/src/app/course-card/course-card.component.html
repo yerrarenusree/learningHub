@@ -1,11 +1,15 @@
-<p-card header="Courses">
-    <p-panel>
-        <ng-template pTemplate="header">
-            Header content here
-        </ng-template>
-        Body Content
-        <ng-template pTemplate="footer">
-            Footer content here
-        </ng-template>
-    </p-panel>
-</p-card>
+<div>
+    <div class="alignement">
+        <h1>Courses</h1>
+        <button *ngIf="this.router.url === '/home'" pButton pRipple class="p-button-text" type="button" (click)="goToCourses()">View More</button>
+      </div>
+  <div class="card-alignment">
+    <ul class="nav navbar-nav" *ngFor="let card of specificCardDetails">
+      <li class="nav-item">
+        <a class="nav-link" (click)="goToLink(card.link)">
+          <p-card styleClass="p-2" header="{{ card.title }}"></p-card
+        ></a>
+      </li>
+    </ul>
+  </div>
+</div>

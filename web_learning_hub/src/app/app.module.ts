@@ -18,6 +18,11 @@ import {PanelModule} from 'primeng/panel';
 import {DropdownModule} from 'primeng/dropdown';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import {FormsModule} from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
+import {DividerModule} from 'primeng/divider';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,7 @@ import {FormsModule} from '@angular/forms';
     CoursesComponent,
     EventCardComponent,
     CourseCardComponent,
-    DropdownComponent
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +43,12 @@ import {FormsModule} from '@angular/forms';
     PanelModule,
     DropdownModule,
     FormsModule,
+    ButtonModule,
+    DividerModule,
+    ConfirmDialogModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [ConfirmationService, MessageService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
