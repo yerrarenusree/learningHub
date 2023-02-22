@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -8,17 +8,19 @@ import { Component } from '@angular/core';
 })
 
 export class DropdownComponent {
+  @Output() selectedType = new EventEmitter<string>();
   cities:any =  [];
-
-    selectedCity: any = {};
 
     constructor() {
         this.cities = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
+            {name: 'New York', code: 'NY', type: 'test'},
+            {name: 'Rome', code: 'RM', type: 'testing'},
+            {name: 'London', code: 'LDN', type: 'tst'},
+            {name: 'Istanbul', code: 'IST', type: 't'},
         ];
+    }
+
+    OnchangeValue(event: any) {
+      this.selectedType.emit(event.value);
     }
 }

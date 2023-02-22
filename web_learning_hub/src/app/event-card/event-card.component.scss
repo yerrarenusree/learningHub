@@ -48,3 +48,46 @@ p {
         padding: 0.5rem 1rem;
     }
 }
+
+.wrap{position: relative;padding:0;}
+.overflow {
+  margin:0; padding:0;
+  white-space: nowrap; 
+  width: 60%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  line-height: 50px;
+  box-sizing: border-box;
+}
+
+
+#after{
+  cursor: pointer;
+  border:1px solid red;
+  display:block;
+  position:absolute;
+  top:0;right:40%;
+  width:2.2em;
+  height:2.2em;
+}
+
+
+.tooltip {
+  width: 60%;
+  visibility: hidden;
+  background-color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position:absolute;
+  top:5em;
+  left:0;
+}
+
+
+#after:hover + .tooltip {
+  visibility: visible;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}

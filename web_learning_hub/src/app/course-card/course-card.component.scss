@@ -1,10 +1,22 @@
 .card-alignment {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
 }
 
 .alignement {
     display: flex;
     justify-content: space-between;
+}
+
+:host ::ng-deep {
+    .p-card .p-card-content {
+        padding: 0;
+    }
+    .p-card .p-card-footer {
+        padding: 0;
+    }
+    .p-card .p-card-body {
+        padding: 0.5rem 1rem;
+    }
 }

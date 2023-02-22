@@ -1,8 +1,8 @@
-<div class="mt-5 mx-0">
+<div class="">
   <div class="p-fluid mt-5 mx-4 pt-5" *ngIf="router.url !== '/home'">
-    <app-dropdown></app-dropdown>
+    <app-dropdown (selectedType)="selectedType($event)"></app-dropdown>
   </div>
-  <div class="mx-4 mt-4">
-    <app-event-card></app-event-card>
+  <div class="">
+    <app-event-card [heading]="header" [specificCardDetails]="specificCardDetails"></app-event-card>
   </div>
 </div>

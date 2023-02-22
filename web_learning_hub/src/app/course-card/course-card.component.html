@@ -1,13 +1,15 @@
 <div>
     <div class="alignement">
-        <h1>Courses</h1>
-        <button *ngIf="this.router.url === '/home'" pButton pRipple class="p-button-text" type="button" (click)="goToCourses()">View More</button>
+        <h4 [ngClass]="router.url === '/home' ? '' : 'px-4 pt-4'">Courses</h4>
+        <button *ngIf="router.url === '/home'" pButton pRipple class="p-button-text" type="button" (click)="goToCourses()">View More</button>
       </div>
-  <div class="card-alignment">
+  <div class="card-alignment" [ngClass]="router.url === '/home' ? '' : 'px-4'">
     <ul class="nav navbar-nav" *ngFor="let card of specificCardDetails">
       <li class="nav-item">
         <a class="nav-link" (click)="goToLink(card.link)">
-          <p-card styleClass="p-2" header="{{ card.title }}"></p-card
+          <p-card styleClass="p-2">
+            <img [src]="card.image" width="100%" height="60">
+            </p-card
         ></a>
       </li>
     </ul>

@@ -1,13 +1,13 @@
 <div>
   <div class="alignement">
-  <h1>{{ heading }}</h1>
+  <h4 [ngClass]="router.url === '/home' ? '' : 'px-4 pt-0'"><i class="pi pi-calendar-times pt-4" style="font-size: 1.5rem;"></i> {{ heading }}</h4>
   <button *ngIf="this.router.url === '/home'" pButton pRipple class="p-button-text" type="button" (click)="goToEventPage()">View More</button>
 </div>
-  <div class="card-alignment pt-2">
+  <div class="card-alignment pt-2" [ngClass]="router.url === '/home' ? '' : 'p-4'">
     <div *ngFor="let card of specificCardDetails">
       <p-card styleClass="p-2 event-card-continear" header="{{ card.title }}">
         <p-divider></p-divider>
-          <p class="pb-2">{{ card.description }}</p>
+        <div class="wrap"> <p class="pb-2 overflow">{{ card.description }}</p></div>
           <div class="grid-alignment">
           <p class="label">PresentedBy:</p>
           <P>{{ card.presentedBy }}</P>
@@ -41,27 +41,5 @@
       icon="pi pi-exclamation-triangle"
     ></p-confirmDialog>
     <p-toast></p-toast>
-    <!-- <div class="card-alignment">
-    <p-panel styleClass="pl-4">
-      <ng-template pTemplate="header"> Header content here </ng-template>
-      Body Content
-      <ng-template pTemplate="footer"> Footer content here </ng-template>
-    </p-panel>
-    <p-panel styleClass="pl-4">
-        <ng-template pTemplate="header"> Header content here </ng-template>
-        Body Content
-        <ng-template pTemplate="footer"> Footer content here </ng-template>
-      </p-panel>
-      <p-panel styleClass="pl-4">
-        <ng-template pTemplate="header"> Header content here </ng-template>
-        Body Content
-        <ng-template pTemplate="footer"> Footer content here </ng-template>
-      </p-panel>
-      <p-panel styleClass="pl-4">
-        <ng-template pTemplate="header"> Header content here </ng-template>
-        Body Content
-        <ng-template pTemplate="footer"> Footer content here </ng-template>
-      </p-panel>
-      </div> -->
   </div>
 </div>
